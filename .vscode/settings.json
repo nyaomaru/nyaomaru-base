@@ -1,0 +1,23 @@
+{
+  "files.exclude": {
+    "**/node_modules": true
+  },
+  "files.eol": "\n",
+  "prettier.singleQuote": true,
+  "editor.mouseWheelZoom": true,
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "css.lint.unknownAtRules": "ignore",
+  "typescript.tsdk": "node_modules\\typescript\\lib"
+}
