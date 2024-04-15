@@ -1,0 +1,40 @@
+import { ReviewInfo } from '@/components/organisms/top/SectionReview';
+
+export const reviewsList: ReviewInfo[] = [
+  {
+    title: 'nyaomaru1',
+    message: 'Excellent!',
+    main: '/images/voice_user01.png',
+    sub: '/images/voice_user01_mockup.png',
+    clientImage: '/images/voice_user01.png',
+    tag: 'New business start-up',
+    modalImageLogo: '/images/modal_user01_logo.png',
+    modalImageLogoText: 'Cook fish',
+    modalImageSecond: '/images/modal_user01_mockup.png',
+    modalImageSecondText: 'Delicious food',
+  },
+  {
+    title: 'nyaomaru2',
+    message: 'Great!',
+    main: '/images/voice_user02.png',
+    sub: '/images/voice_user02_mockup.png',
+    clientImage: '/images/voice_user02.png',
+    tag: 'Launch new fish bar',
+    modalImageLogo: '/images/modal_user02_logo.png',
+    modalImageLogoText: 'Go fishing',
+    modalImageSecond: '/images/modal_user02_ogp.png',
+    modalImageSecondText: 'Delicious fish',
+  },
+  {
+    title: 'nyaomaru3',
+    message: 'Good!',
+    main: '/images/voice_user03.png',
+    sub: '/images/voice_user03_mockup.png',
+    clientImage: '/images/voice_user03.png',
+    tag: 'Remake woody house',
+    modalImageLogo: '/images/modal_user03_logo.png',
+    modalImageLogoText: 'Take wood',
+    modalImageSecond: '/images/modal_user03_mockup.png',
+    modalImageSecondText: 'Good wood',
+  },
+];

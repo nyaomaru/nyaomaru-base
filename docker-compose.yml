@@ -1,0 +1,46 @@
+version: '3.9'
+
+volumes:
+  next-build: {}
+  node-modules: {}
+
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command:
+      - sh
+      - -c
+      - |
+        yarn dev
+    restart: always
+    tty: true
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+    ports:
+      - '3333:3333'
+      - '3334:3334'
+
+  storybook:
+    build: ./
+    command:
+      - sh
+      - -c
+      - |
+        yarn storybook
+    environment:
+      NODE_PATH: /data/storybook/node_modules
+    ports:
+      - '6006:6006'
+      - '6007:6007'
+    volumes:
+      - './:/app:cached'
+      - 'node-modules:/data/storybook/node_modules'
+    networks:
+      default:
+        aliases:
+          - storybook.local
