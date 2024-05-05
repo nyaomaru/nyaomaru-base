@@ -5,8 +5,10 @@ import { ImageWithAlt } from '@/components/atoms/ImageWithAlt';
 import { RoundTag } from '@/components/atoms/RoundTag';
 import { ReviewInfo } from '@/components/organisms/top/SectionReview';
 
-interface ReviewCardProps
-  extends Pick<ReviewInfo, 'title' | 'message' | 'main' | 'sub' | 'clientImage' | 'tag'> {}
+type ReviewCardProps = Pick<
+  ReviewInfo,
+  'title' | 'message' | 'main' | 'sub' | 'clientImage' | 'tag'
+>;
 
 export const ReviewCard: React.FC<ReviewCardProps> = ({
   title,

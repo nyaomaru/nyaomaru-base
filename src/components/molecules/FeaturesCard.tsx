@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Features } from '@/types/custom';
 
-interface FeaturesCardProps extends Features {}
+type FeaturesCardProps = Features;
 
 export const FeaturesCard: React.FC<FeaturesCardProps> = ({
   imageSrc,

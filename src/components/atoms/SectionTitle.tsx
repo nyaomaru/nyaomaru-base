@@ -1,6 +1,5 @@
 import React from 'react';
 
-// prop types
 type SectionTitleProps = {
   title: string;
   englishTitle: string;

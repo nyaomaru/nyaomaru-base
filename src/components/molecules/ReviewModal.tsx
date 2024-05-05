@@ -5,7 +5,7 @@ import { ImageWithAlt } from '@/components/atoms/ImageWithAlt';
 import { RoundTag } from '@/components/atoms/RoundTag';
 import { ReviewInfo } from '@/components/organisms/top/SectionReview';
 
-interface ModalProps extends ReviewInfo {}
+type ModalProps = ReviewInfo;
 
 export const ReviewModal: React.FC<ModalProps> = ({
   title,

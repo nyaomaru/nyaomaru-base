@@ -6,11 +6,11 @@ import { typeWriter } from '@/lib/type-writer';
 let semaphore = false;
 
 export const TopPage = () => {
-  const [fadein, setFadein] = useState<string>('fadein-before');
+  const [fadeIn, setFadeIn] = useState<string>('fadeIn-before');
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      setFadein('fadein-after');
+      setFadeIn('fadeIn-after');
     }, 4000);
 
     if (!semaphore) {
@@ -33,7 +33,7 @@ export const TopPage = () => {
         <div className="mt-8">
           <span className="my-2 text-primary-light" id="topPageComment"></span>
 
-          <div className={fadein}>
+          <div className={fadeIn}>
             <p id="author">Nyaomaru &#x1f680;</p>
             <div className="btn-container">
               <div className="mt-5 w-40 text-center">

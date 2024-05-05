@@ -1,21 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { SectionTitle } from '@/components/atoms/SectionTitle';
 import { FeaturesArea } from '@/components/molecules/FeaturesArea';
 import { siteFeaturesList } from '@/domain/top/point';
-import { fadeInSetting } from '@/lib/fade-in';
+import { useFadeIn } from '@/hooks/useFadeIn';
 
 export const SectionPoint = () => {
-  const [fadein, setFadein] = useState<string>('fadein-before');
+  const [fadeIn, setFadeIn] = useState<string>('fadeIn-before');
 
-  useEffect(() => {
-    const listenEvent = fadeInSetting('siteFeature', setFadein);
-
-    window.addEventListener('scroll', listenEvent);
-    return () => {
-      window.removeEventListener('scroll', listenEvent);
-    };
-  }, []);
+  useFadeIn('siteFeature', setFadeIn);
 
   const featuresAreaComponent = siteFeaturesList.map(feature => (
     <FeaturesArea
@@ -31,7 +24,7 @@ export const SectionPoint = () => {
     <section className="point relative mb-[219px]">
       <div id="points" className="scroll-blank"></div>
       <div className="title-conatiner mb-4">
-        <div id="siteFeature" className={fadein}>
+        <div id="siteFeature" className={fadeIn}>
           <SectionTitle title="Feature" englishTitle="Point" />
         </div>
       </div>

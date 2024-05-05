@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
 
-// prop types
 type SecondaryLinkButtonProps = {
   buttonName: string;
   buttonLink: string;
