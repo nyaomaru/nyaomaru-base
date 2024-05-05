@@ -10,8 +10,6 @@ type FooterLink = {
 
 const footerLinkList: FooterLink[] = [
   { title: 'Home', link: '/' },
-  // { title: 'About This Site', link: '/' },
-  // { title: 'Contact Us', link: '/' },
   { title: 'Privacy Policy', link: '/privacy-policy' },
 ];
 

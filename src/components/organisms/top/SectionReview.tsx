@@ -20,7 +20,7 @@ export type ReviewInfo = {
 
 export type ReviewState = {
   color: string;
-  fadein: string;
+  fadeIn: string;
 };
 
 export const SectionReview = () => {

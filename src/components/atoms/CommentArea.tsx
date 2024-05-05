@@ -1,6 +1,5 @@
 import React from 'react';
 
-// prop types
 type CommentAreaProps = {
   comment: string;
 };

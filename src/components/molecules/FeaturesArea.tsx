@@ -1,12 +1,12 @@
 import Image from 'next/legacy/image';
 import React from 'react';
 
-export interface FeaturesAreaProps {
+export type FeaturesAreaProps = {
   sectionType: 'right' | 'left';
   imageSrc: string;
   sectionTitle: string;
   sectionText: string;
-}
+};
 
 export const FeaturesArea: React.FC<FeaturesAreaProps> = ({
   sectionType,

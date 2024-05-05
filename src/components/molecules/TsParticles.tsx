@@ -16,9 +16,7 @@ export const TsParticles = (): JSX.Element => {
   }, []);
 
   // eslint-disable-next-line no-unused-vars
-  const particlesLoaded = async (_container?: ParticleContainer): Promise<void> => {
-    // console.log(container);
-  };
+  const particlesLoaded = async (_container?: ParticleContainer): Promise<void> => {};
 
   const particlesOptions: ISourceOptions = useMemo(
     () => ({

@@ -1,29 +1,22 @@
 import Image from 'next/legacy/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { PrimaryLinkButton } from '@/components/atoms/PrimaryLinkButton';
 import { SecondaryLinkButton } from '@/components/atoms/SecondaryLinkButton';
 import { SectionTitle } from '@/components/atoms/SectionTitle';
-import { fadeInSetting } from '@/lib/fade-in';
+import { useFadeIn } from '@/hooks/useFadeIn';
 
 export const SectionPlan = () => {
-  const [fadein, setFadein] = useState<string>('fadein-before');
+  const [fadeIn, setFadeIn] = useState<string>('fadeIn-before');
 
-  useEffect(() => {
-    const listenEvent = fadeInSetting('sitePlan', setFadein);
-
-    window.addEventListener('scroll', listenEvent);
-    return () => {
-      window.removeEventListener('scroll', listenEvent);
-    };
-  }, []);
+  useFadeIn('sitePlan', setFadeIn);
 
   return (
     <section className="relative mb-[80px]">
       <div id="plan-link" className="scroll-blank"></div>
       <div className="title-conatiner container mb-4">
-        <div id="sitePlan" className={fadein}>
+        <div id="sitePlan" className={fadeIn}>
           <SectionTitle title="Production Plans" englishTitle="Plan" />
         </div>
       </div>

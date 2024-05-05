@@ -1,9 +1,9 @@
 import Image from 'next/legacy/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { SectionTitle } from '@/components/atoms/SectionTitle';
 import { TwitterList } from '@/components/molecules/TwitterList';
-import { fadeInSetting } from '@/lib/fade-in';
+import { useFadeIn } from '@/hooks/useFadeIn';
 
 const worksImages = [
   '/images/works_logo01.png',
@@ -18,22 +18,15 @@ const worksImages = [
 ];
 
 export const SectionWorks = () => {
-  const [fadein, setFadein] = useState<string>('fadein-before');
+  const [fadeIn, setFadeIn] = useState<string>('fadeIn-before');
 
-  useEffect(() => {
-    const listenEvent = fadeInSetting('aboutWorks', setFadein);
-
-    window.addEventListener('scroll', listenEvent);
-    return () => {
-      window.removeEventListener('scroll', listenEvent);
-    };
-  }, []);
+  useFadeIn('aboutWorks', setFadeIn);
 
   return (
     <section className="works relative mb-[180px]">
       <div id="works-link" className="scroll-blank"></div>
       <div className="title-conatiner mb-4">
-        <div id="aboutWorks" className={fadein}>
+        <div id="aboutWorks" className={fadeIn}>
           <SectionTitle title="Production Achievements" englishTitle="Works"></SectionTitle>
           <p className="text-primary-light">
             We have created new features for many companies and creators.
@@ -58,7 +51,7 @@ export const SectionWorks = () => {
           ))}
         </div>
         <div className="tweet-container mt-3">
-          <div id="tweetSwipe" className={fadein}>
+          <div id="tweetSwipe" className={fadeIn}>
             <p className="text-center text-primary-light">👈 Swipe right or left 👉</p>
           </div>
           <TwitterList />

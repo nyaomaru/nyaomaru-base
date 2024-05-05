@@ -2,7 +2,6 @@ import React from 'react';
 
 import { TweetImage } from '@/components/atoms/TweetImage';
 
-// prop types
 type TweetProps = {
   tweet: string;
   url: string;

@@ -1,20 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { FeaturesCard } from '@/components/molecules/FeaturesCard';
 import { featuresList } from '@/domain/top/point7';
-import { fadeInSetting } from '@/lib/fade-in';
+import { useFadeIn } from '@/hooks/useFadeIn';
 
 export const SectionPoint7 = () => {
-  const [fadein, setFadein] = useState<string>('fadein-before');
+  const [fadeIn, setFadeIn] = useState<string>('fadeIn-before');
 
-  useEffect(() => {
-    const listenEvent = fadeInSetting('siteFeatures', setFadein);
-
-    window.addEventListener('scroll', listenEvent);
-    return () => {
-      window.removeEventListener('scroll', listenEvent);
-    };
-  }, []);
+  useFadeIn('setFadeIn', setFadeIn);
 
   const featuresCardComponent = featuresList.map(feature => (
     <div className="mb-8 w-full rounded-lg bg-primary-medium lg:w-[48%]" key={feature.imageSrc}>
@@ -30,7 +23,7 @@ export const SectionPoint7 = () => {
     <section className="point7 relative">
       <div id="flow" className="scroll-blank"></div>
       <div className="title-conatiner mb-4 text-center">
-        <div id="siteFeatures" className={fadein}>
+        <div id="siteFeatures" className={fadeIn}>
           <h2 className="blah-light text-[28px] font-semibold text-primary-light">
             <span className=" relative">
               Nyaomaru can help you with scratching.

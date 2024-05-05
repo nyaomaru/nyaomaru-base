@@ -11,7 +11,6 @@ const APP_DEFAULT_DESCRIPTION = 'description setting';
 const APP_DEFAULT_OG_IMAGE_PATH = '/default-unreact.png';
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// prop types
 type LayoutProps = {
   path: string;
   title: string;

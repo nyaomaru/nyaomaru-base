@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 
-// prop types
 type PrimaryScrollButtonProps = {
   buttonName: string;
   scrollTo: string;
