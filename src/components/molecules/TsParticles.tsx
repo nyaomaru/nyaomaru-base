@@ -13,13 +13,16 @@ export const TsParticles = (): JSX.Element => {
           await loadSlim(engine);
           setInit(true);
         });
-      } catch (error) {
-        console.error(error);
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          console.error(error.message);
+        } else {
+          console.error('An unknown error occurred.');
+        }
         setInit(false);
       }
     };
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     void initializeParticles();
   }, []);
 
