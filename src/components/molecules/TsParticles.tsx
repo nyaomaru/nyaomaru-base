@@ -10,9 +10,13 @@ export const TsParticles = (): JSX.Element => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     initParticlesEngine(async engine => {
       await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
+    })
+      .then(() => {
+        setInit(true);
+      })
+      .catch(() => {
+        setInit(false);
+      });
   }, []);
 
   // eslint-disable-next-line no-unused-vars
