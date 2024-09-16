@@ -7,7 +7,7 @@ const Top = (): JSX.Element => {
   return (
     <>
       <TsParticles />
-      <TopPage></TopPage>
+      <TopPage />
     </>
   );
 };

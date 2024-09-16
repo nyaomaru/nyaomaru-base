@@ -27,8 +27,8 @@ docker compose up -d
 If you don't use docker, you need to run below command.
 
 ```sh
-yarn
-yarn dev
+pnpm
+pnpm dev
 ```
 
 Then, you access to [`localhost:3333/top`](http://localhost:3333/top/), you can see the website.
@@ -42,7 +42,7 @@ you can use storybook.
 If you don't use docker, you need to run below command.
 
 ```sh
-yarn storybook
+pnpm storybook
 ```
 
 Then, you access to [`localhost:6006/`](http://localhost:6006/), you can see nyaomaru base storybook.
@@ -56,5 +56,5 @@ you can run jest tests.
 If you want to run jest, you run below code.
 
 ```sh
-yarn test
+pnpm test
 ```

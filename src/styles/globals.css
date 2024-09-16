@@ -227,23 +227,21 @@ html {
 .test2 {
   color: red;
 } */
-.fadein-before {
+.fadein-1 {
   color: white;
   opacity: 0;
   transform: translateX(-200px);
   transition:
     opacity 1s,
     transform 1s;
-  overflow: hidden;
 }
-.fadein-after {
+.fadein-2 {
   color: white;
   opacity: 1;
   transform: translate(0);
   transition:
     opacity 1s,
     transform 1s;
-  overflow: hidden;
 }
 .header-link {
   cursor: pointer;
@@ -348,7 +346,7 @@ html {
   padding-top: 16rem;
   color: white;
   background-color: black;
-  height: 1000px;
+  height: 100vh;
 }
 
 #topPageComment::after {
