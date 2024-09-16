@@ -28,7 +28,7 @@ export const TopPage = () => {
 
   return (
     <div className="top-page">
-      <section className="fv nebura relative text-center">
+      <section className="relative text-center">
         <br />
         <div className="mt-8">
           <span className="my-2 text-primary-light" id="topPageComment"></span>
