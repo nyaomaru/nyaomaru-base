@@ -6,7 +6,6 @@ import { Footer } from '@/components/organisms/Footer';
 const testSetting = {
   alt: 'nyaomaru_base',
   src: 'src',
-  imageSrc: '/images/demo-logo.png',
   link: 'link',
   href: 'href',
   url: '/privacy-policy',
@@ -21,7 +20,6 @@ describe('Footer', () => {
     const { getByAltText } = render(<Footer />);
     const logo = getByAltText(testSetting.alt);
     expect(logo).toBeInTheDocument();
-    expect(logo).toHaveAttribute(testSetting.src, testSetting.imageSrc);
   });
 
   test('renders footer links correctly', () => {

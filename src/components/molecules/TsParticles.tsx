@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { type Container as ParticleContainer, type ISourceOptions } from '@tsparticles/engine';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
@@ -7,12 +8,23 @@ export const TsParticles = (): JSX.Element => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    initParticlesEngine(async engine => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
+    const initializeParticles = async () => {
+      try {
+        await initParticlesEngine(async engine => {
+          await loadSlim(engine);
+          setInit(true);
+        });
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          console.error(error.message);
+        } else {
+          console.error('An unknown error occurred.');
+        }
+        setInit(false);
+      }
+    };
+
+    void initializeParticles();
   }, []);
 
   // eslint-disable-next-line no-unused-vars

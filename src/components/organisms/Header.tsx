@@ -37,9 +37,13 @@ export const Header = () => {
             className="text-[14px] font-normal text-primary-light"
             activeClass="active"
             spy={true}
+            aria-label={title}
           >
             {title}
-            <span className="block text-center text-[8px] font-normal text-primary-light">
+            <span
+              className="block text-center text-[8px] font-normal text-primary-light"
+              aria-label={english}
+            >
               {english}
             </span>
           </Scroll>
@@ -66,7 +70,7 @@ export const Header = () => {
           </Link>
 
           {/* PC Navigation */}
-          <nav className="hidden md:block">
+          <nav className="hidden md:block" aria-label="pc-header">
             <ol className="flex items-center gap-16 font-bold">
               {renderHeaderLinks()}
               <li>
@@ -79,6 +83,7 @@ export const Header = () => {
           <button
             className="relative z-50 block size-12 rounded-full border md:hidden"
             onClick={handleMenuClick}
+            aria-label="Hamburger Button"
           >
             <span
               className={`absolute inline-block  h-1 rounded-full bg-primary-light duration-300 ${
@@ -103,9 +108,9 @@ export const Header = () => {
             className={`fixed right-0 top-0 z-20  mr-4 mt-20 rounded-lg  bg-theme-light p-6 duration-300 md:hidden ${
               isOpen ? 'opacity-100' : 'opacity-0'
             }`}
+            aria-label="drawer-menu"
           >
             <ol className="flex flex-col space-y-5">
-              {' '}
               {headerLinkList.map(({ title, link }, index) => (
                 <li key={'drawer' + index} className="drawer-link">
                   <Link href={link}>
