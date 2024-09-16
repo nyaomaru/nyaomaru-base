@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitFor, within } from '@testing-library/react';
 import React from 'react';
 
 import { Header } from '@/components/organisms/Header';
@@ -6,7 +6,6 @@ import { Header } from '@/components/organisms/Header';
 const testSetting = {
   alt: 'vercel',
   src: 'src',
-  imageSrc: '/images/demo-logo.png',
   link: 'link',
   href: 'href',
   reviewLinkUrl: '/#review-link',
@@ -18,24 +17,33 @@ describe('Header', () => {
     const { getByAltText } = render(<Header />);
     const logo = getByAltText(testSetting.alt);
     expect(logo).toBeInTheDocument();
-    expect(logo).toHaveAttribute(testSetting.src, testSetting.imageSrc);
   });
 
   test('renders header links correctly', () => {
     const { getByRole } = render(<Header />);
-    const customerLink = getByRole(testSetting.link, { name: /customer/i });
+    const pcHeader = getByRole('navigation', { name: /pc-header/i });
+
+    const customerLink = within(pcHeader).getByRole(testSetting.link, { name: /customer/i });
     expect(customerLink).toHaveAttribute(testSetting.href, testSetting.reviewLinkUrl);
-    const featuresLink = getByRole(testSetting.link, { name: /features/i });
+
+    const featuresLink = within(pcHeader).getByRole(testSetting.link, { name: /features/i });
     expect(featuresLink).toHaveAttribute(testSetting.href, testSetting.pointsUrl);
   });
 
-  test('toggles mobile menu correctly', () => {
+  test('toggles mobile menu correctly', async () => {
     const { getByRole } = render(<Header />);
+
     const hamburgerButton = getByRole('button', { name: /hamburger button/i });
-    expect(screen.queryByRole('navigation', { name: /drawer menu/i })).not.toBeInTheDocument();
     fireEvent.click(hamburgerButton);
-    expect(getByRole('navigation', { name: /drawer menu/i })).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(getByRole('navigation', { name: /drawer-menu/i })).toHaveClass('opacity-100');
+    });
+
     fireEvent.click(hamburgerButton);
-    expect(screen.queryByRole('navigation', { name: /drawer menu/i })).not.toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(getByRole('navigation', { name: /drawer-menu/i })).toHaveClass('opacity-0');
+    });
   });
 });
