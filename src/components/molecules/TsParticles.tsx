@@ -19,6 +19,7 @@ export const TsParticles = (): JSX.Element => {
       }
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     void initializeParticles();
   }, []);
 
