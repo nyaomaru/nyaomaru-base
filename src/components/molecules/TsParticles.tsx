@@ -7,16 +7,19 @@ export const TsParticles = (): JSX.Element => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    initParticlesEngine(async engine => {
-      await loadSlim(engine);
-    })
-      .then(() => {
-        setInit(true);
-      })
-      .catch(() => {
+    const initializeParticles = async () => {
+      try {
+        await initParticlesEngine(async engine => {
+          await loadSlim(engine);
+          setInit(true);
+        });
+      } catch (error) {
+        console.error(error);
         setInit(false);
-      });
+      }
+    };
+
+    void initializeParticles();
   }, []);
 
   // eslint-disable-next-line no-unused-vars
