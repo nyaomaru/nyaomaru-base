@@ -27,7 +27,7 @@ docker compose up -d
 If you don't use docker, you need to run below command.
 
 ```sh
-pnpm
+pnpm i
 pnpm dev
 ```
 
