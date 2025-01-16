@@ -63,8 +63,8 @@ export const Header = () => {
               }}
               className="image-with-alt"
               src="/images/demo-logo.png"
-              width={120}
-              height={60}
+              width={80}
+              height={40}
               alt="vercel"
             />
           </Link>

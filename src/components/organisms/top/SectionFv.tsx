@@ -6,7 +6,7 @@ export const SectionFv = () => {
   return (
     <section className="fv nebura relative pt-10 md:pt-24">
       <div className="relative z-20 my-10 flex flex-wrap items-center">
-        <div className="order-1 lg:w-1/2">
+        <div className="order-1">
           <h1 className="text-[2rem] font-semibold text-primary-light">
             <span className="block text-sm font-normal">Nyaomaru business service</span>
             <span className="relative before:absolute before:top-[-20px] before:inline-block before:size-full before:content-story-stroke">
@@ -24,10 +24,10 @@ export const SectionFv = () => {
             <PrimaryScrollButton buttonName="Consult" scrollTo="plan-link" />
           </div>
         </div>
-        <div className="w-full lg:order-1 lg:w-1/2">
+        <div className="m-4 ml-auto w-96 lg:order-1">
           <Image
             loader={({ src }) => {
-              return src + '?w=648';
+              return src + '?w=400';
             }}
             src="/images/fv.png"
             width={400}
