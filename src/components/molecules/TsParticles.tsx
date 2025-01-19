@@ -2,7 +2,7 @@
 import { type Container as ParticleContainer, type ISourceOptions } from '@tsparticles/engine';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type JSX } from 'react';
 
 export const TsParticles = (): JSX.Element => {
   const [init, setInit] = useState(false);
