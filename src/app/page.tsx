@@ -1,5 +1,4 @@
 'use client';
-
 import Container from '@/components/layout/Container';
 import Layout from '@/components/layout/Layout';
 import { TsParticles } from '@/components/molecules/TsParticles';
@@ -11,6 +10,8 @@ import {
   SectionReview,
   SectionWorks,
 } from '@/components/organisms/top';
+
+import type { JSX } from 'react';
 
 const Home = (): JSX.Element => {
   return (
