@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import React from 'react';
 
 import { Features } from '@/types/custom';
@@ -14,9 +14,6 @@ export const FeaturesCard: React.FC<FeaturesCardProps> = ({
     <div className="features-card grid grid-cols-3 p-6">
       <div className="image-container col-span-1 mr-2">
         <Image
-          loader={({ src }) => {
-            return src + '?w=137';
-          }}
           src={imageSrc}
           width={137}
           height={137}

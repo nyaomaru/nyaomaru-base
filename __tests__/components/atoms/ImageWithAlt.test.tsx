@@ -10,7 +10,7 @@ const testSetting = {
   height: 100,
   className: 'custom-class',
   imageClassName: 'image-with-alt',
-  imageSrc: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
+  imageSrc: '/_next/image?url=https%3A%2F%2Fexample.com%2Fimage.jpg&w=3840&q=75',
 } as const;
 
 describe('ImageWithAlt', () => {
@@ -40,7 +40,7 @@ describe('ImageWithAlt', () => {
     );
     const imageElement = getByAltText(testSetting.alt);
     expect(imageElement).toBeTruthy();
-    expect(imageElement.parentElement?.parentElement).toHaveClass(testSetting.className);
+    expect(imageElement.parentElement).toHaveClass(testSetting.className);
     expect(imageElement).toHaveClass(testSetting.imageClassName);
   });
 });

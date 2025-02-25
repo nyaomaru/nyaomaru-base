@@ -19,7 +19,7 @@ const testSetting = {
   mdOrder1: 'md:order-1',
   mdOrder2: 'md:order-2',
   imageContainerClassName: '.image-container',
-  imageSrc: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
+  imageSrc: '/_next/image?url=%2Fpath%2Fto%2Fimage.jpg&w=1920&q=75',
 } as const;
 
 describe('FeaturesArea', () => {

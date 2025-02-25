@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import React from 'react';
 
 type TweetImageProps = {
@@ -9,15 +9,6 @@ type TweetImageProps = {
 
 export const TweetImage: React.FC<TweetImageProps> = ({ url, src, alt }) => (
   <a href={url} className="tweet-image flex w-3/6 flex-wrap items-center rounded-md">
-    <Image
-      loader={({ src }) => {
-        return src + '?w=176';
-      }}
-      className="image-with-alt"
-      src={src}
-      width={176}
-      height={102}
-      alt={alt}
-    />
+    <Image className="image-with-alt" src={src} width={176} height={102} alt={alt} />
   </a>
 );

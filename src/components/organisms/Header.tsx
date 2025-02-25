@@ -1,4 +1,6 @@
-import Image from 'next/legacy/image';
+'use client';
+
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { Link as Scroll } from 'react-scroll';
@@ -58,14 +60,12 @@ export const Header = () => {
         <Container className="flex items-center justify-between">
           <Link href="/top" passHref>
             <Image
-              loader={({ src }) => {
-                return src + '?w=120';
-              }}
               className="image-with-alt"
-              src="/images/demo-logo.png"
+              src="/images/demo-logo.png?w=120"
               width={80}
               height={40}
               alt="vercel"
+              priority
             />
           </Link>
 

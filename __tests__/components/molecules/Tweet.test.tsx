@@ -13,7 +13,7 @@ const tweet = () => {
     <Tweet
       tweet={testSetting.tweet}
       url={testSetting.url}
-      tweetImages={['image1.jpg', 'image2.jpg', 'image3.jpg']}
+      tweetImages={['/image1.jpg', '/image2.jpg', '/image3.jpg']}
     />
   );
 };

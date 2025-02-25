@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import React from 'react';
 
 type ImageWithAltProps = {
@@ -18,26 +18,9 @@ export const ImageWithAlt: React.FC<ImageWithAltProps> = ({
 }) => (
   <div className={className}>
     {width === 0 && height === 0 ? (
-      <Image
-        loader={({ src }) => {
-          return src + '?w=' + width;
-        }}
-        className="image-with-alt"
-        src={src}
-        alt={alt}
-        layout="fill"
-      />
+      <Image className="image-with-alt" src={src} alt={alt} layout="fill" />
     ) : (
-      <Image
-        loader={({ src }) => {
-          return src + '?w=' + width;
-        }}
-        className="image-with-alt"
-        src={src}
-        width={width}
-        height={height}
-        alt={alt}
-      />
+      <Image className="image-with-alt" src={src} width={width} height={height} alt={alt} />
     )}
   </div>
 );
