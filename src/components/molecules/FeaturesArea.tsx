@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import React from 'react';
 
 export type FeaturesAreaProps = {
@@ -22,9 +22,6 @@ export const FeaturesArea: React.FC<FeaturesAreaProps> = ({
       <div className={imageAreaClassName}>
         <div className="image-container">
           <Image
-            loader={({ src }) => {
-              return src + '?w=648';
-            }}
             src={imageSrc}
             width={648}
             height={455}

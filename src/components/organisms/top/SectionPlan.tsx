@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -28,9 +28,6 @@ export const SectionPlan = () => {
             </div>
             <div className="image-container">
               <Image
-                loader={({ src }) => {
-                  return src + '?w=980';
-                }}
                 src="/images/branding-image.png"
                 width={980}
                 height={420}
@@ -99,9 +96,6 @@ export const SectionPlan = () => {
         <Link href="https://twitter.com/nyaomaru/" passHref>
           <div className="twitter mr-8 size-[50px]">
             <Image
-              loader={({ src }) => {
-                return src + '?w=500';
-              }}
               src="/images/w-twitter.svg"
               width={500}
               height={500}
@@ -114,9 +108,6 @@ export const SectionPlan = () => {
         <Link href="https://note.com/nyaomaru/" passHref>
           <div className="note size-[100px]">
             <Image
-              loader={({ src }) => {
-                return src + '?w=500';
-              }}
               src="/images/w-note.svg"
               width={500}
               height={500}

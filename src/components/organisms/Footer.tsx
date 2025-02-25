@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import Container from '@/components/layout/Container';
@@ -34,9 +34,6 @@ export const Footer = () => {
           {/* Logo */}
           <Link href="/" className="mx-auto" passHref>
             <Image
-              loader={({ src }) => {
-                return src + '?w=120';
-              }}
               className="image-with-alt"
               src="/images/demo-logo.png"
               width={120}

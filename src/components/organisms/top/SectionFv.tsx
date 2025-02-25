@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 
 import { PrimaryScrollButton } from '@/components/atoms/PrimaryScrollButton';
 
@@ -26,9 +26,6 @@ export const SectionFv = () => {
         </div>
         <div className="m-4 ml-auto w-96 lg:order-1">
           <Image
-            loader={({ src }) => {
-              return src + '?w=400';
-            }}
             src="/images/fv.png"
             width={400}
             height={400}

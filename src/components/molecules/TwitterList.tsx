@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -38,9 +38,6 @@ export const TwitterList: React.FC = () => {
           <div className="tweet-card w-full p-[22px] md:w-[320px]" data-testid="tweet-card">
             <div className="twitter-logo text-center">
               <Image
-                loader={({ src }) => {
-                  return src + '?w=28';
-                }}
                 className="image-with-alt image-twitter"
                 src={logo}
                 width={28}
@@ -51,9 +48,6 @@ export const TwitterList: React.FC = () => {
             <div className="user-container flex items-center">
               <div className="user-icon mr-4">
                 <Image
-                  loader={({ src }) => {
-                    return src + '?w=70';
-                  }}
                   className="image-with-alt"
                   src={userIcon}
                   width={70}

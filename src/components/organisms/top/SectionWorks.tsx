@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { useState } from 'react';
 
 import { SectionTitle } from '@/components/atoms/SectionTitle';
@@ -38,9 +38,6 @@ export const SectionWorks = () => {
           {worksImages.map((src, index) => (
             <div key={index} className="works-image-container w-1/2 px-1 md:w-1/3">
               <Image
-                loader={({ src }) => {
-                  return src + '?w=374';
-                }}
                 src={src}
                 width="374"
                 height="264"
