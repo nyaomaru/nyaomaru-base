@@ -10,7 +10,7 @@ const testSetting = {
 } as const;
 
 // Mock the Image component
-jest.mock('next/legacy/image', () => ({
+jest.mock('next/image', () => ({
   __esModule: true,
   // eslint-disable-next-line @next/next/no-img-element
   default: ({ src, alt }: { src: string; alt: string }) => <img src={src} alt={alt} />,
@@ -21,10 +21,7 @@ describe('TweetImage', () => {
     render(<TweetImage url={testSetting.url} src={testSetting.src} alt={testSetting.alt} />);
 
     expect(document.querySelector('img')).toBeInTheDocument();
-    expect(document.querySelector('img')).toHaveAttribute(
-      'src',
-      '/_next/image?url=%2Fimage.jpg&w=384&q=75'
-    );
+    expect(document.querySelector('img')).toHaveAttribute('src', '/image.jpg');
     expect(document.querySelector('img')).toHaveAttribute('alt', testSetting.alt);
   });
 });

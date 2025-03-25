@@ -33,7 +33,6 @@ export const SectionPlan = () => {
                 height={420}
                 alt="branding-image"
                 className="rounded-lg"
-                layout="responsive"
               />
             </div>
             <div className="text-container">
@@ -101,19 +100,17 @@ export const SectionPlan = () => {
               height={500}
               alt="twitter-image"
               className="rounded-lg"
-              layout="responsive"
             />
           </div>
         </Link>
         <Link href="https://note.com/nyaomaru/" passHref>
-          <div className="note size-[100px]">
+          <div className="note mt-16 size-[100px]">
             <Image
               src="/images/w-note.svg"
               width={500}
               height={500}
               alt="note-image"
               className="rounded-lg"
-              layout="responsive"
             />
           </div>
         </Link>

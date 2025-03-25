@@ -15,11 +15,11 @@ type HeaderLinkList = {
 };
 
 const headerLinkList: HeaderLinkList[] = [
-  { title: 'Customer', link: '/#review-link', english: 'Voice' },
-  { title: 'Features', link: '/#points', english: 'Point' },
-  { title: 'Production', link: '/#works-link', english: 'Works' },
-  { title: 'Business', link: '/#flow', english: 'Flow' },
-  { title: 'Production', link: '/#plan-link', english: 'Plans' },
+  { title: 'Customer', link: 'review-link', english: 'Voice' },
+  { title: 'Features', link: 'points', english: 'Point' },
+  { title: 'Production', link: 'works-link', english: 'Works' },
+  { title: 'Business', link: 'flow', english: 'Flow' },
+  { title: 'Production', link: 'plan-link', english: 'Plans' },
 ];
 
 export const Header = () => {
@@ -32,24 +32,21 @@ export const Header = () => {
   const renderHeaderLinks = () => {
     return headerLinkList.map(({ title, link, english }, index) => (
       <li key={'title' + index} className={'header-link group overflow-hidden'}>
-        <Link href={link} passHref legacyBehavior>
-          <Scroll
-            to={link}
-            smooth={true}
-            className="text-[14px] font-normal text-primary-light"
-            activeClass="active"
-            spy={true}
-            aria-label={title}
+        <Scroll
+          to={link}
+          className="text-[14px] font-normal text-primary-light"
+          activeClass="active"
+          spy={true}
+          aria-label={title}
+        >
+          {title}
+          <span
+            className="block text-center text-[8px] font-normal text-primary-light"
+            aria-label={english}
           >
-            {title}
-            <span
-              className="block text-center text-[8px] font-normal text-primary-light"
-              aria-label={english}
-            >
-              {english}
-            </span>
-          </Scroll>
-        </Link>
+            {english}
+          </span>
+        </Scroll>
       </li>
     ));
   };
@@ -58,7 +55,7 @@ export const Header = () => {
     <header className="header-gradient fixed z-[9999] w-full py-3">
       <div className="header-inner relative">
         <Container className="flex items-center justify-between">
-          <Link href="/top" passHref>
+          <Link href="/top">
             <Image
               className="image-with-alt"
               src="/images/demo-logo.png?w=120"
@@ -113,11 +110,11 @@ export const Header = () => {
             <ol className="flex flex-col space-y-5">
               {headerLinkList.map(({ title, link }, index) => (
                 <li key={'drawer' + index} className="drawer-link">
-                  <Link href={link}>
+                  <Scroll to={link} activeClass="active" spy={true} aria-label={title}>
                     <span className="py-1 font-normal text-accent" onClick={handleMenuClick}>
                       {title}
                     </span>
-                  </Link>
+                  </Scroll>
                 </li>
               ))}
               <li className="cursor-pointer">

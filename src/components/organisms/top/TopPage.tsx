@@ -1,29 +1,30 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import { PrimaryLinkButton } from '@/components/atoms/PrimaryLinkButton';
 import { typeWriter } from '@/lib/type-writer';
 
-let semaphore = false;
-
 export const TopPage = () => {
   const [fadeIn, setFadeIn] = useState<string>('fadeIn-before');
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setFadeIn('fadeIn-after');
     }, 4000);
 
-    if (!semaphore) {
+    if (!hasAnimated.current) {
       typeWriter({
         element: '#topPageComment',
         speed: 100,
         string: 'Welcome to Nyaomaru site',
       });
 
-      semaphore = true;
+      hasAnimated.current = true;
     }
 
-    return () => clearTimeout(timeoutId);
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (

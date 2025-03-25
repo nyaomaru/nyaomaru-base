@@ -82,7 +82,7 @@ html {
   transform: rotate(-45deg);
 }
 .modalClose:hover {
-  background: rgb(240, 240, 240);
+  background: #2a62c7;
 }
 
 .gradient-text {
