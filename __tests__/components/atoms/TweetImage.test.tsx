@@ -10,7 +10,7 @@ const testSetting = {
 } as const;
 
 // Mock the Image component
-jest.mock('next/legacy/image', () => ({
+jest.mock('next/image', () => ({
   __esModule: true,
   // eslint-disable-next-line @next/next/no-img-element
   default: ({ src, alt }: { src: string; alt: string }) => <img src={src} alt={alt} />,

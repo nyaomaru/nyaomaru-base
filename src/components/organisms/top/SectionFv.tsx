@@ -25,14 +25,7 @@ export const SectionFv = () => {
           </div>
         </div>
         <div className="m-4 ml-auto w-96 lg:order-1">
-          <Image
-            src="/images/fv.png"
-            width={400}
-            height={400}
-            priority
-            alt="site-image"
-            layout="responsive"
-          />
+          <Image src="/images/fv.png" width={400} height={400} priority alt="site-image" />
         </div>
       </div>
     </section>

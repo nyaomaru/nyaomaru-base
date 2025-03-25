@@ -23,7 +23,9 @@ export const TopPage = () => {
       semaphore = true;
     }
 
-    return () => clearTimeout(timeoutId);
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (

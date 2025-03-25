@@ -33,7 +33,6 @@ export const SectionPlan = () => {
                 height={420}
                 alt="branding-image"
                 className="rounded-lg"
-                layout="responsive"
               />
             </div>
             <div className="text-container">
@@ -101,7 +100,6 @@ export const SectionPlan = () => {
               height={500}
               alt="twitter-image"
               className="rounded-lg"
-              layout="responsive"
             />
           </div>
         </Link>
@@ -113,7 +111,6 @@ export const SectionPlan = () => {
               height={500}
               alt="note-image"
               className="rounded-lg"
-              layout="responsive"
             />
           </div>
         </Link>
