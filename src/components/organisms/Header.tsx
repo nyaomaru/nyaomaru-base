@@ -110,11 +110,11 @@ export const Header = () => {
             <ol className="flex flex-col space-y-5">
               {headerLinkList.map(({ title, link }, index) => (
                 <li key={'drawer' + index} className="drawer-link">
-                  <Link href={link}>
+                  <Scroll to={link} activeClass="active" spy={true} aria-label={title}>
                     <span className="py-1 font-normal text-accent" onClick={handleMenuClick}>
                       {title}
                     </span>
-                  </Link>
+                  </Scroll>
                 </li>
               ))}
               <li className="cursor-pointer">
