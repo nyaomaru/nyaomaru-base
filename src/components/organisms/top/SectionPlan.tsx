@@ -104,7 +104,7 @@ export const SectionPlan = () => {
           </div>
         </Link>
         <Link href="https://note.com/nyaomaru/" passHref>
-          <div className="note size-[100px]">
+          <div className="note mt-16 size-[100px]">
             <Image
               src="/images/w-note.svg"
               width={500}
