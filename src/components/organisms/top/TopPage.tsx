@@ -19,7 +19,7 @@ export const TopPage = () => {
         string: 'Welcome to Nyaomaru site',
       });
 
-      hasAnimated.current = true; // 2 回目以降は実行しない
+      hasAnimated.current = true;
     }
 
     return () => {
