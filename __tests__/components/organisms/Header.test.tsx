@@ -6,10 +6,6 @@ import { Header } from '@/components/organisms/Header';
 const testSetting = {
   alt: 'vercel',
   src: 'src',
-  link: 'link',
-  href: 'href',
-  reviewLinkUrl: '/#review-link',
-  pointsUrl: '/#points',
 } as const;
 
 describe('Header', () => {
@@ -23,11 +19,11 @@ describe('Header', () => {
     const { getByRole } = render(<Header />);
     const pcHeader = getByRole('navigation', { name: /pc-header/i });
 
-    const customerLink = within(pcHeader).getByRole(testSetting.link, { name: /customer/i });
-    expect(customerLink).toHaveAttribute(testSetting.href, testSetting.reviewLinkUrl);
+    const customerLink = within(pcHeader).getByLabelText('Customer');
+    expect(customerLink).toHaveRole('generic');
 
-    const featuresLink = within(pcHeader).getByRole(testSetting.link, { name: /features/i });
-    expect(featuresLink).toHaveAttribute(testSetting.href, testSetting.pointsUrl);
+    const featuresLink = within(pcHeader).getByLabelText('Features');
+    expect(featuresLink).toHaveRole('generic');
   });
 
   test('toggles mobile menu correctly', async () => {
