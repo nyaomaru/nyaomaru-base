@@ -1,3 +1,4 @@
+import { isBrowser } from 'is-kit';
 import { useEffect } from 'react';
 
 import { fadeInSetting } from '@/lib/fade-in';
@@ -6,7 +7,15 @@ import type { Dispatch, SetStateAction } from 'react';
 
 export const useFadeIn = (targetId: string, setter: Dispatch<SetStateAction<string>>) => {
   useEffect(() => {
+    if (!isBrowser()) {
+      return;
+    }
+
     const listenEvent = fadeInSetting(targetId, setter);
+
+    if (!listenEvent) {
+      return;
+    }
 
     window.addEventListener('scroll', listenEvent);
     return () => {

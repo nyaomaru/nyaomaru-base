@@ -1,3 +1,5 @@
+import { isBrowser, isElement } from 'is-kit';
+
 type TypeWriter = {
   element: string;
   speed: number;
@@ -5,16 +7,16 @@ type TypeWriter = {
 };
 
 export const typeWriter = (param: TypeWriter) => {
-  if (typeof window === 'object') {
-    const element = document?.querySelector(param.element);
-    const { speed, string } = param;
+  if (!isBrowser()) return;
 
-    if (element) {
-      string.split('').forEach((char, index) => {
-        setTimeout(() => {
-          element.textContent += char;
-        }, speed * index);
-      });
-    }
-  }
+  const element = document.querySelector(param.element);
+  const { speed, string } = param;
+
+  if (!isElement(element)) return;
+
+  string.split('').forEach((char, index) => {
+    setTimeout(() => {
+      element.textContent += char;
+    }, speed * index);
+  });
 };

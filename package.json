@@ -15,6 +15,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "is-kit": "latest",
     "next": "15.4.7",
     "next-head-seo": "^0.1.3",
     "react": "19.0.0",
