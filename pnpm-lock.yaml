@@ -12,6 +12,9 @@ importers:
 
   .:
     dependencies:
+      is-kit:
+        specifier: ^1.0.1
+        version: 1.0.1
       next:
         specifier: 15.4.7
         version: 15.4.7(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -4070,6 +4073,9 @@ packages:
   is-glob@4.0.3:
     resolution: {integrity: sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg==}
     engines: {node: '>=0.10.0'}
+
+  is-kit@1.0.1:
+    resolution: {integrity: sha512-9OCs6DQI/W1q9WqmD9S/L8k/yCG7PWzaxX+zi0CB2IKdIvUQJ0QZhWJgW2ZKc91Sx8uGPUyBm5oWE9PskbH0aQ==}
 
   is-map@2.0.3:
     resolution: {integrity: sha512-1Qed0/Hr2m+YqxnM09CjA2d/i6YZNfF6R2oRAOj36eUdS6qIV/huPJNSEpKbupewFs+ZsJlxsjjPbc0/afW6Lw==}
@@ -10897,6 +10903,8 @@ snapshots:
   is-glob@4.0.3:
     dependencies:
       is-extglob: 2.1.1
+
+  is-kit@1.0.1: {}
 
   is-map@2.0.3: {}
 
